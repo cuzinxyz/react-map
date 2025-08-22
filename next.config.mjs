@@ -9,6 +9,11 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // GitHub Pages configuration
+  basePath: '/react-map',
+  assetPrefix: '/react-map/',
+  trailingSlash: true,
+  output: 'export',
 }
 
 export default nextConfig

@@ -29,7 +29,7 @@ export default function FormsControlled() {
     terms: false,
   })
 
-  const [errors, setErrors] = useState<Partial<FormData>>({})
+  const [errors, setErrors] = useState<Record<keyof FormData, string | undefined>>({} as Record<keyof FormData, string | undefined>)
   const [submitted, setSubmitted] = useState(false)
 
   // Handle input changes
@@ -61,7 +61,7 @@ export default function FormsControlled() {
 
   // Form validation
   const validateForm = (): boolean => {
-    const newErrors: Partial<FormData> = {}
+    const newErrors: Record<keyof FormData, string | undefined> = {} as Record<keyof FormData, string | undefined>
 
     if (!formData.name.trim()) newErrors.name = "Name is required"
     if (!formData.email.trim()) newErrors.email = "Email is required"
@@ -98,7 +98,7 @@ export default function FormsControlled() {
       newsletter: false,
       terms: false,
     })
-    setErrors({})
+    setErrors({} as Record<keyof FormData, string | undefined>)
     setSubmitted(false)
   }
 
